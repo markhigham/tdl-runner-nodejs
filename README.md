@@ -10,4 +10,4 @@
 
 - Install dependencies `npm install`
 - Open `lib/befaster_app.js`
-- Read the documentation
+- Read the comments as documentation, they will guide through the rest of the setup
