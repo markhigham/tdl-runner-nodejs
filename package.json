@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Warmup code to bootstrap the challenge",
   "scripts": {
-    "start": "node ./lib/befaster_app.js",
+    "start": "node ./lib/start.js",
     "test": "node run-tests.js"
   },
   "repository": {
