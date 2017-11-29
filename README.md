@@ -9,5 +9,5 @@
 ## 2. How to start
 
 - Install dependencies `npm install`
-- Open `lib/start.js`
+- Open `lib/connect_to_server.js`
 - Read the comments as documentation, they will guide through the rest of the setup
