@@ -11,8 +11,8 @@
     "url": "git+https://github.com/julianghionoiu/tdl-warmup.git"
   },
   "dependencies": {
-    "tdl-client": "0.19.0",
     "properties-reader": "0.0.15",
+    "tdl-client": "^0.20.1",
     "unirest": "0.5.1"
   },
   "devDependencies": {
