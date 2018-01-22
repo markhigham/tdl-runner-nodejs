@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Warmup code to bootstrap the challenge",
   "scripts": {
-    "start": "node ./lib/connect_to_server.js",
+    "start": "node ./lib/send_command_to_server.js",
     "test": "node run-tests.js"
   },
   "repository": {
@@ -11,8 +11,8 @@
     "url": "git+https://github.com/julianghionoiu/tdl-warmup.git"
   },
   "dependencies": {
-    "tdl-client": "0.19.0",
     "properties-reader": "0.0.15",
+    "tdl-client": "^0.20.3",
     "unirest": "0.5.1"
   },
   "devDependencies": {
