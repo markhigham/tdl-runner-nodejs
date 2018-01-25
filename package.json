@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "properties-reader": "0.0.15",
-    "tdl-client": "^0.20.3",
+    "tdl-client": "^0.20.4",
     "unirest": "0.5.1"
   },
   "devDependencies": {
