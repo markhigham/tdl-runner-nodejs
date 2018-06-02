@@ -1,6 +1,6 @@
-var sum = require('../../../lib/solutions/SUM/sum');
+const test = require("ava");
+const sum = require('../../../lib/solutions/SUM/sum');
 
-exports['compute sum'] = function (test) {
-    test.equal(sum(1, 2), 3);
-    test.done();
-};
+test("compute sum", t => {
+    t.is(sum(1, 2), 3);
+});
