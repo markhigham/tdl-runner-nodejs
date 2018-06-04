@@ -18,10 +18,8 @@ NODEJS_CODE_COVERAGE_INFO="${SCRIPT_CURRENT_DIR}/coverage.tdl"
 if [ -f "${NODEJS_TEST_REPORT_JSON_FILE}" ]; then
     prettier --write ${NODEJS_TEST_REPORT_JSON_FILE}
     COVERAGE_OUTPUT=$(grep ${CHALLENGE_ID} ${NODEJS_TEST_REPORT_JSON_FILE} -A 4 | grep -o -P '(?<="lines": {).*(?=},)' | tr -d ' "')
-    MISSED=$(echo $COVERAGE_OUTPUT | awk -F "," '{print $3}' | awk -F ":" '{print $2}')
-    COVERED=$(echo $COVERAGE_OUTPUT | awk -F "," '{print $2}' | awk -F ":" '{print $2}')
-    TOTAL_LINES=$((MISSED + $COVERED))
-    echo $(($COVERED * 100 / $TOTAL_LINES)) > ${NODEJS_CODE_COVERAGE_INFO}
+    COVERAGE_PERCENTAGE=$(echo $COVERAGE_OUTPUT | awk -F "," '{print $4}' | awk -F ":" '{print $2}')
+    echo ${COVERAGE_PERCENTAGE} > ${NODEJS_CODE_COVERAGE_INFO}
     cat ${NODEJS_CODE_COVERAGE_INFO}
     exit 0
 else
