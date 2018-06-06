@@ -18,7 +18,7 @@ NODEJS_CODE_COVERAGE_INFO="${SCRIPT_CURRENT_DIR}/coverage.tdl"
 if [ -f "${NODEJS_TEST_REPORT_JSON_FILE}" ]; then
     ${SCRIPT_CURRENT_DIR}/node_modules/prettier/bin-prettier.js --write ${NODEJS_TEST_REPORT_JSON_FILE}
 
-    COVERAGE_OUTPUT=$(grep ${CHALLENGE_ID} ${NODEJS_TEST_REPORT_JSON_FILE} -A 4 | grep -o -P '(?<="lines": {).*(?=},)' | tr -d ' "')
+    COVERAGE_OUTPUT=$(grep ${CHALLENGE_ID} ${NODEJS_TEST_REPORT_JSON_FILE} -A 4 | grep '"lines"' | sed 's/"lines": {\(.*\)},/\1/g' | tr -d ' "')
     TOTAL_COVERAGE_PERCENTAGE=$(( 0 ))
     NUMBER_OF_FILES=$(( 0 ))
     while read coveragePerFile;
