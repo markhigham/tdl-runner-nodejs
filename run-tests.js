@@ -7,5 +7,17 @@ catch(e) {
     process.exit();
 }
 
+var diveSync = require("diveSync"),
+    fs = require("fs"),
+    directoriesToTest = ['test'];
+
+diveSync(directoriesToTest[0], {directories:true}, function(err, file) {
+    if (fs.lstatSync(file).isDirectory()) {
+        directoriesToTest.push(file);
+    }
+});
+
 process.chdir(__dirname);
-reporter.run(['test', 'test/solutions']);
+for (let eachDirIndex in directoriesToTest) {
+    reporter.run([directoriesToTest[eachDirIndex]]);
+}
