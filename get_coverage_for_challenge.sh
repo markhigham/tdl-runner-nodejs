@@ -16,14 +16,11 @@ NODEJS_CODE_COVERAGE_INFO="${SCRIPT_CURRENT_DIR}/coverage.tdl"
 [ -e ${NODEJS_CODE_COVERAGE_INFO} ] && rm ${NODEJS_CODE_COVERAGE_INFO}
 
 if [ -f "${NODEJS_TEST_REPORT_JSON_FILE}" ]; then
-    TOTAL_COVERAGE_PERCENTAGE=$(( 0 ))
-
     cat ${NODEJS_TEST_REPORT_JSON_FILE}  |\
             jq "with_entries(select([.key] | contains([\"solutions/${CHALLENGE_ID}\"])))" |\
             jq 'reduce to_entries[].value.statements as $item ({"total": 0, "covered": 0}; { "total": (.total + $item.total), "covered": (.covered + $item.covered) })' |\
             jq 'if .total == 0 then 0 else .covered * 100 / .total end' |\
             tee ${NODEJS_CODE_COVERAGE_INFO}
-
     exit 0
 else
     echo "No coverage report was found"
