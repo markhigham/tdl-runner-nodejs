@@ -4,3 +4,6 @@ challenges/*.txt
 record/localstore
 config/credentials.config
 .DS_Store
+.nyc_output
+coverage.tdl
+coverage
