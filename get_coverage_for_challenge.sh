@@ -20,6 +20,7 @@ if [ -f "${NODEJS_TEST_REPORT_JSON_FILE}" ]; then
             jq "with_entries(select([.key] | contains([\"solutions/${CHALLENGE_ID}\"])))" |\
             jq 'reduce to_entries[].value.statements as $item ({"total": 0, "covered": 0}; { "total": (.total + $item.total), "covered": (.covered + $item.covered) })' |\
             jq 'if .total == 0 then 0 else .covered * 100 / .total end' |\
+            jq 'floor' |\
             tee ${NODEJS_CODE_COVERAGE_INFO}
     exit 0
 else
