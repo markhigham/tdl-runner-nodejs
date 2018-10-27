@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "properties-reader": "0.0.15",
-    "tdl-client": "^0.22.1",
+    "tdl-client-nodejs": "^v0.22.0",
     "unirest": "0.5.1",
     "diveSync": "0.3.0"
   },
