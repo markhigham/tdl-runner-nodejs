@@ -4,18 +4,19 @@
   "description": "Warmup code to bootstrap the challenge",
   "scripts": {
     "start": "node ./lib/send_command_to_server.js",
-    "test": "ava test/solutions",
-    "coverage": "nyc --reporter=json-summary --reporter=text ava test/solutions"
+    "test": "node ./node_modules/mocha/bin/mocha test/**/*.js",
+    "coverage": "nyc --reporter=json-summary --reporter=text ./node_modules/mocha/bin/mocha test/solutions/**/*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/julianghionoiu/tdl-warmup.git"
   },
   "dependencies": {
+    "diveSync": "0.3.0",
+    "mocha": "^5.2.0",
     "properties-reader": "0.0.15",
     "tdl-client-nodejs": "^0.25.0",
-    "unirest": "0.5.1",
-    "diveSync": "0.3.0"
+    "unirest": "0.5.1"
   },
   "devDependencies": {
     "ava": "^0.25.0",
