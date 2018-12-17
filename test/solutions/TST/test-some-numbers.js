@@ -9,6 +9,6 @@ const two = require('../../../lib/solutions/TST/two');
 
 describe('TST challenge', function() {
 	it('show one', function() {
-		assert.equals(one(), 1);
+		assert.equal(one(), 1);
 	});
 });
