@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./lib/send_command_to_server.js",
     "test": "node ./node_modules/mocha/bin/mocha test/**/*.js",
+    "test-watch" : "mocha -w test/**/*.js",
     "coverage": "nyc --reporter=json-summary --reporter=text npm test"
   },
   "repository": {
